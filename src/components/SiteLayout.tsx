@@ -6,7 +6,7 @@ const nav = [
   { to: "/portfolio/couples", label: "Couples" },
   { to: "/portfolio/weddings", label: "Weddings & Elopements" },
   { to: "/portfolio/portraits", label: "Solo" },
-  { to: "/investment", label: "Investment" },
+  { to: "/investment", label: "Investment / FAQ" },
 ] as const;
 
 export function SiteHeader() {

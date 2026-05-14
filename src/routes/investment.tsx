@@ -14,7 +14,7 @@ export const Route = createFileRoute("/investment")({
 const tiers: { name: string; desc: string; price: string; featured?: boolean; items: string[] }[] = [
   {
     name: "Portrait Sessions",
-    desc: "A directed, concept-led session for one/two — editorial in feel.",
+    desc: "My bookings are intentionally limited per month. My projects get my full focus, not rushed attention. ",
     price: "Starting at $275",
     items: [
       "Pre-session vision call",
@@ -39,8 +39,8 @@ const tiers: { name: string; desc: string; price: string; featured?: boolean; it
   },
   {
     name: "Weddings",
-    desc: "Your most magical and memorable day, captured like a film. ",
-    price: "Starting at $2,500",
+    desc: "Some days only happen once. Photograph them like it.",
+    price: "Starting at $2,200",
     items: [
       "Second photographer optional",
       "4 – 10 hours of coverage",
@@ -65,7 +65,7 @@ function Investment() {
   return (
     <>
       <section className="px-6 lg:px-10 pt-24 pb-16 max-w-5xl mx-auto text-center">
-        <p className="eyebrow">The investment</p>
+        <p className="eyebrow">The investment / FAQ</p>
         <h1 className="font-display text-5xl md:text-6xl mt-4 italic">
           Heirlooms, not just photos.
         </h1>
@@ -73,20 +73,21 @@ function Investment() {
           Cinematic stories. Editorial portraits. Pictures that feel.
         </p>
         <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-          Each experience is built around how you want to feel, what you want
-          to remember, and the people you want to remember it with. Pricing
-          below is a starting point — full guides are sent on inquiry.
+          Every experience is built around how you want to feel and the moments
+          worth keeping. Pricing below is a starting point — full guides
+          sent on inquiry.
         </p>
       </section>
 
       <section className="px-6 lg:px-10 pb-10 max-w-5xl mx-auto">
         <p className="eyebrow text-center">What you're actually investing in</p>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-4 text-sm text-muted-foreground">
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-5 text-sm text-muted-foreground">
           {[
-            "A directed, concept-led session for one/two — editorial in feel.",
-            "Location scouting + mood/wardrobe guidance",
-            "Cinematic shoot day, directed in real time",
-            "Editorial-grade edit, hand-toned like a magazine",
+            "My bookings are intentionally limited per month. My projects get my full focus, not rushed attention. ",
+            "A vision walk-through before shoot - mood, references and feeling aligned from the start.",
+            "Location, light, and wardrobe guidance so nothing is left to chance.",
+            "My perspective and direction during shoot day — I guide the feeling, not just a pose. ",
+            "The color, the grain, all hand toned to feel like your own editorial. Minimum 10 hours editing, every shoot length, no exceptions.",
           ].map((item) => (
             <li key={item} className="flex gap-3 border border-border p-4">
               <span className="text-accent">✦</span>
