@@ -58,7 +58,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Shad Pictures — Cinematic Photography" },
       { property: "og:description", content: "Nashville-based photographer. Weddings, couples, portraits. A picture should make you feel something." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://shadpictures.lovable.app/og-image.jpg" },
+      { property: "og:image", content: "https://shadpictures.com/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Shad Pictures — Cinematic Photography" },
       { name: "twitter:description", content: "Nashville-based photographer. Weddings, couples, portraits. A picture should make you feel something." },
