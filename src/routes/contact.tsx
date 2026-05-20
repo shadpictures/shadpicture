@@ -21,18 +21,13 @@ const schema = z.object({
   vision: z.string().trim().min(10, "Tell me a little more").max(2000),
 });
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xykoayda";
-
 function Contact() {
   const [sent, setSent] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const fd = new FormData(form);
+    const fd = new FormData(e.currentTarget);
     const result = schema.safeParse(Object.fromEntries(fd));
     if (!result.success) {
       const errs: Record<string, string> = {};
@@ -41,25 +36,7 @@ function Contact() {
       return;
     }
     setErrors({});
-    setSubmitting(true);
-    setSubmitError(null);
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: fd,
-      });
-      if (!res.ok) {
-        const data = await res.json().catch(() => null);
-        throw new Error(data?.errors?.[0]?.message ?? "Submission failed");
-      }
-      setSent(true);
-      form.reset();
-    } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
+    setSent(true);
   };
 
   return (
@@ -70,7 +47,10 @@ function Contact() {
           You reached out — <span className="not-italic">that already tells me something.</span>
         </h1>
         <p className="mt-6 text-background/80 max-w-md">
-          You wanted pictures that felt like your own film instead of just a generic pose, &nbsp;and you're in the right place.&nbsp;I shoot like a cinematographer and edit like a magazine — story-driven, editorial, a little Vogue in the soul. When you book me, you're booking the whole vision: the concept, the direction on the day, and the edit — run like a small film set, with you at the center.
+          I shoot like a cinematographer and edit like a magazine — story-driven,
+          editorial, a little Vogue in the soul. If you want pictures that feel like
+          a scene from your own film instead of just documentation, you're in the
+          right place. When you book me, you're booking the whole vision: the concept, the direction on the day, and the edit — run like a small film set, with you at the center.
         </p>
         <p className="mt-6 font-display italic text-2xl text-background">
           Let's make something special.
@@ -118,9 +98,8 @@ function Contact() {
               />
               {errors.vision && <p className="text-destructive text-xs mt-1">{errors.vision}</p>}
             </div>
-            {submitError && <p className="text-destructive text-xs">{submitError}</p>}
-            <button type="submit" disabled={submitting} className="text-xs uppercase tracking-[0.25em] bg-foreground text-background px-6 py-4 hover:bg-accent hover:text-accent-foreground transition-colors disabled:opacity-60">
-              {submitting ? "Sending…" : "Send inquiry"}
+            <button type="submit" className="text-xs uppercase tracking-[0.25em] bg-foreground text-background px-6 py-4 hover:bg-accent hover:text-accent-foreground transition-colors">
+              Send inquiry
             </button>
           </form>
         )}
