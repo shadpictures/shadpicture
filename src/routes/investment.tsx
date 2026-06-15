@@ -14,11 +14,11 @@ export const Route = createFileRoute("/investment")({
 const tiers: { name: string; desc: string; price: string; featured?: boolean; items: string[] }[] = [
   {
     name: "Portrait Sessions",
-    desc: "A directed, concept-led session for one/two — editorial in feel.",
-    price: "Starting at $275",
+    desc: "My bookings are intentionally limited per month. My projects get my full focus, not rushed attention. ",
+    price: "Starting at $200",
     items: [
       "Pre-session vision call",
-      "1 – 2 hours of coverage",
+      "45 minutes– 2 hours of coverage",
       "60+ hand-edited cinematic images",
       "Personal print release",
       "Online gallery delivered in 2 weeks",
@@ -27,11 +27,11 @@ const tiers: { name: string; desc: string; price: string; featured?: boolean; it
   {
     name: "Elopements",
     desc: "Just the two of you, art-directed start to finish.",
-    price: "Starting at $1,800",
+    price: "Starting at $1,500",
     featured: true,
     items: [
       "Planning & timeline support",
-      "4 – 6 hours of coverage",
+      "3– 6 hours of coverage",
       "300+ cinematic, hand-toned images",
       "A short cinematic story-edit slideshow",
       "Travel within 100 mi included",
@@ -39,13 +39,13 @@ const tiers: { name: string; desc: string; price: string; featured?: boolean; it
   },
   {
     name: "Weddings",
-    desc: "Your most magical and memorable day, captured like a film. ",
-    price: "Starting at $2,500",
+    desc: "Some days only happen once. Photograph them like it.",
+    price: "Starting at $1,500",
     items: [
       "Second photographer optional",
-      "4 – 10 hours of coverage",
+      "3– 10 hours of coverage",
       "Thorough vision connection prior, your day should feel like your film. ",
-      "600+ cinematic images",
+      "400+ cinematic images",
       "Heirloom album credit",
     ],
   },
@@ -65,28 +65,29 @@ function Investment() {
   return (
     <>
       <section className="px-6 lg:px-10 pt-24 pb-16 max-w-5xl mx-auto text-center">
-        <p className="eyebrow">The investment</p>
+        <p className="eyebrow">The investment / FAQ</p>
         <h1 className="font-display text-5xl md:text-6xl mt-4 italic">
-          Heirlooms, not just photos.
+          The way it felt, not just photos.
         </h1>
         <p className="font-display italic text-xl md:text-2xl mt-4 text-accent">
           Cinematic stories. Editorial portraits. Pictures that feel.
         </p>
         <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-          Each experience is built around how you want to feel, what you want
-          to remember, and the people you want to remember it with. Pricing
-          below is a starting point — full guides are sent on inquiry.
+          Every experience is built around how you want to feel and the moments
+          worth keeping. Pricing below is a starting point — full guides
+          sent on inquiry.
         </p>
       </section>
 
       <section className="px-6 lg:px-10 pb-10 max-w-5xl mx-auto">
         <p className="eyebrow text-center">What you're actually investing in</p>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-4 text-sm text-muted-foreground">
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-5 text-sm text-muted-foreground">
           {[
-            "A directed, concept-led session for one/two — editorial in feel.",
-            "Location scouting + mood/wardrobe guidance",
-            "Cinematic shoot day, directed in real time",
-            "Editorial-grade edit, hand-toned like a magazine",
+            "My bookings are intentionally limited per month. My projects get my full focus, not rushed attention. ",
+            "My unique perspective and art direction. I do not see nor think like most photographers.  I guide the feeling, not just a pose. ",
+            "Location, light, and wardrobe guidance so nothing is left to chance.",
+            " I'm extremely thorough in editing, 10 hours for every hour i shoot, no exceptions. Color, grain, light: all hand toned to feel like your own magazine. ",
+            "A vision walk-through call before shoot - mood, references and feeling aligned from the start.",
           ].map((item) => (
             <li key={item} className="flex gap-3 border border-border p-4">
               <span className="text-accent">✦</span>
