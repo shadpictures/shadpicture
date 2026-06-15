@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import heroCouple from "@/assets/hero-couple.jpg";
 import portraits from "@/assets/portfolio-seniors.jpg";
 import couples from "@/assets/portfolio-couples.jpg";
 import weddings from "@/assets/portfolio-weddings.jpg";
@@ -23,7 +22,7 @@ export const Route = createFileRoute("/")({
       { title: "shad.pictures — Cinematic vintage 90s photography" },
       { name: "description", content: "Dreamy, romantic vintage 90s film photography for seniors, couples, families and intimate weddings. Memories caught in time." },
       { property: "og:title", content: "shad.pictures — Cinematic vintage 90s photography" },
-      { property: "og:image", content: heroCouple },
+      { property: "og:image", content: "/og-image.jpg" },
     ],
   }),
   component: Home,

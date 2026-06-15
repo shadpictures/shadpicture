@@ -9,7 +9,7 @@ export const Route = createFileRoute("/portfolio/portraits")({
       { title: "Solo Sessions — shad.pictures" },
       { name: "description", content: "Cinematic, vintage 90s film solo sessions — unposed, unhurried, and unmistakably you." },
       { property: "og:title", content: "Solo Sessions — shad.pictures" },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: "/og-image.jpg" },
     ],
   }),
   component: () => <PortfolioTemplate cfg={cfg} />,
