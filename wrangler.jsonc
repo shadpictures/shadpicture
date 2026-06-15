@@ -3,5 +3,15 @@
   "name": "shadpicture",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "src/server.ts"
+  "main": "dist/server/server.js",
+  "build": {
+    "command": "npm run build",
+    "upload": {
+      "format": "modules",
+      "dir": "dist/server"
+    }
+  },
+  "assets": {
+    "bucket": "dist/client"
+  }
 }
