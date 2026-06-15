@@ -5,13 +5,9 @@
   "compatibility_flags": ["nodejs_compat"],
   "main": "dist/server/server.js",
   "build": {
-    "command": "npm run build",
-    "upload": {
-      "format": "modules",
-      "dir": "dist/server"
-    }
+    "command": "npm run build"
   },
   "assets": {
-    "bucket": "dist/client"
+    "directory": "dist/client"
   }
 }
