@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
+  "name": "shadpicture",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
@@ -8,6 +8,9 @@
     "tanstack-start-injected-head-scripts:v": "./src/virtual-module-stub.ts",
     "tanstack-start-manifest:v": "./src/virtual-module-stub.ts",
     "tanstack-start-server-fn-manifest:v": "./src/virtual-module-stub.ts",
-    "tanstack-start-route-tree:v": "./src/virtual-module-stub.ts"
+    "tanstack-start-route-tree:v": "./src/virtual-module-stub.ts",
+    "#tanstack-router-entry": "./src/virtual-module-stub.ts",
+    "#tanstack-start-entry": "./src/virtual-module-stub.ts",
+    "#tanstack-start-plugin-adapters": "./src/virtual-module-stub.ts"
   }
 }
